@@ -1,0 +1,22 @@
+<script>
+$(document).ready(function(e) {
+        $('#email-form-button').click(function() {
+            var email = $('#email').val();
+            var reg = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!abc.com)(?!xyz.com)(?!pqr.com)(?!rediffmail.com)(?!live.com)(?!outlook.com)(?!me.com)(?!msn.com)(?!ymail.com)([\w-]+\.)+[\w-]{2,4})?$/;
+          
+          console.log(email);
+            if (reg.test(email)) {
+              var errorText = document.getElementById('error-text');
+              errorText.style.display = 'none';
+              return 0;
+            } else {
+                var errorText = document.getElementById('error-text');
+	
+            	// Toggle the display property to show/hide the error text
+               	errorText.style.display = 'block';
+              
+                return false;
+            }
+        });
+ });
+</script>
